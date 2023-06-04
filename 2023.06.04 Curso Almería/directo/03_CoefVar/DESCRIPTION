@@ -1,0 +1,12 @@
+Package: CoefVar
+Type: Package
+Title: Cálculo del coeficiente de variación
+Version: 1.0
+Date: 2023-04-17
+Author: R. Salmerón
+Maintainer: R. Salmerón <romansg@ugr.es>
+Description: En este paquete se calcula el coeficiente de variación usando la varianza muestral.
+License: GPL (>= 2)
+Encoding: UTF-8
+URL: http://colldetreat.r-forge.r-project.org/
+Depends: R (>= 4.2.2), multiColl
