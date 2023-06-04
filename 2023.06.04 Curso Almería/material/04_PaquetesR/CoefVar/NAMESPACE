@@ -1,0 +1,2 @@
+export(CoeficienteVariacion)
+importFrom("stats", "var")
