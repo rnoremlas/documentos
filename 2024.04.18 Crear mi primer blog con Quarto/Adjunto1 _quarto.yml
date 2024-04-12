@@ -1,0 +1,27 @@
+project:
+  type: website
+
+website:
+  title: "DIM3AP"
+  favicon: "favicon.jpg"
+  navbar:
+    logo: "icono.jpg"
+    right:
+      - about.qmd
+      - justificacion.qmd
+      - aclaracion.qmd
+      - icon: twitter
+        href: https://twitter.com/dim3ap
+    page-footer:
+      left: "©2023 Román Salmerón Gómez"
+      center: "Hecho con [Quarto](https://quarto.org/docs/websites/website-blog.html)"
+      right:
+        - icon: twitter
+          href: https://twitter.com/dim3ap
+format:
+  html:
+    theme: flatly # flatly, darkly, cyborg, litera
+    css: styles.css
+
+editor: visual
+

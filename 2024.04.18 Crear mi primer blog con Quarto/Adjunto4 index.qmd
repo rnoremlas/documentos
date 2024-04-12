@@ -1,0 +1,28 @@
+---
+title: "2R4EDI y R Hispano 2022"
+description:
+    Pastrana y Córdoba
+author: "R. Salmerón"
+date: "2023-06-09"
+categories: [congreso, R, rvif, multiColl, Román]
+image: "thumbnail.jpg"
+---
+
+Del 10 al 11 de noviembre de 2022 y del 23 al 25 de noviembre de 2022 se han celebrado, respectivamente, el II Congreso de R para Empresa, Docencia e Investigación y el I Congreso de Usuarios de R (que corresponde a las XII Jornadas). En ambos eventos ha participado el profesor [Román Salmerón Gómez](https://metodoscuantitativos.ugr.es/pages/web/romansg) con sendas comunicaciones.
+
+En el primero de ellos, celebrado en Pastrana (Guadalajara), presentó el trabajo titulado "Detección de multicolinealidad mediante métodos gráficos". En dicho trabajo se mostraban las posibilidades del gráfico de dispersión de los Factores de Inflación de la Varianza (FIV) y Coeficientes de Variación (CV) para detectar el grado de multicolinealidad existente en un modelo econométrico de regresión lineal múltiple. Este gráfico se puede obtener usando las funciones del paquete RVIF de R.
+
+![Tapiz del Museo Parroquial de Tapices de Pastrana](tapiz.jpg "Tapiz del Museo Parroquial de Tapices de Pastrana"){width="200," fig-align="center"}
+
+En el segundo presentó el trabajo "El paquete multiColl  para detectar multicolinealidad preocupante", mostrando las principales funciones de este paquete de R para determinar si el grado de multicolinealidad aproximada existente en un modelo de regresión lineal múltiple es preocupante. 
+
+
+![Momento de la presentación del profesor Salmerón en Córdoba](presentacion.jpg "Momento de la presentación del profesor Salmerón en Córdoba"){width="200," fig-align="center"}
+
+Tanto el paquete RVIF como multiColl forman parte del proyecto [colldetreat](https://r-forge.r-project.org/R/?group_id=2342) de R-Forge y están disponibles en CRAN (ver [multiColl](https://cran.r-project.org/web/packages/multiColl/index.html) y [rvif](https://cran.r-project.org/web/packages/rvif/index.html)).
+
+La participación en ambos congresos ha sido financiada por el Proyecto PP2019-EI-02 del Programa de Estimulación a la Investigación del Plan Propio de Investigación 2019 de la Universidad de Granada denominado "Redefinición del Factor de Inflación de la Varianza y de sus umbrales".
+
+![Vistas desde la habitación en la que fue encerrada la princesa de Éboli en el Palacio Ducal de Pastrana](vistas.jpg "Vistas desde la habitación en la que fue encerrada la princesa de Éboli en el Palacio Ducal de Pastrana"){width="200," fig-align="center"}
+
+

@@ -1,0 +1,50 @@
+---
+title: "A Redefined Variance Inflation Factor"
+description:
+    Overcoming the Limitations of the Variance Inflation Factor
+author: "R. Salmerón"
+date: "2024-04-01"
+categories: [artículo, R package, rvif]
+image: "thumbnail.png"
+editor_options: 
+  chunk_output_type: console
+---
+
+El pasado 30 de marzo (de 2024) se publicó nuestro último trabajo titulado "A Redefined Variance Inflation Factor: Overcoming the Limitations of the Variance Inflation Factor" (<https://doi.org/10.1007/s10614-024-10575-8>) en [Compuational Economics](https://link.springer.com/journal/10614).
+
+En dicho trabajo se refuerzan los pilares básicos de la Econometría proponiendo una redefinición del Factor de Inflación de la Varianza, denominada RVIF en inglés, que permite superar las limitaciones tradicionalmente achacadas al Factor de Inflación de la Varianza (FIV). Más concretamente, es sabido que un FIV alto puede ser compensado por una suma de cuadrados de los residuas pequeña o por un tamaño de la muestra grande. Por lo que un valor alto del FIV no tiene por qué implicar un rechazo espúreo en los contrastes de significación individual del modelo de regresión lineal múltiple (síntoma habitual de la presencia de multicolinealidad aproximada preocupante).
+
+Pues bien, el RVIF supera estas limitaciones al incorporar en su definición estas cuestiones. Además, al contrario que el FIV, el RVIF permite cuantificar las relaciones del término independiente del modelo econométrico lineal con el resto de variables independientes de dicho modelo.
+
+Como punto destacable del trabajo está la existencia del paquete de R llamado [rvif](https://cran.r-project.org/web/packages/rvif/index.html), que permite realizar el cálculo de esta medida.
+
+![Función que permite calcular el RVIF](RVIF.png "Función que permite calcular el RVIF"){width="200," fig-align="center"}
+
+A modo de ejemplo, a continuación se generan tres variables $\mathbf{z}$, $\mathbf{v}$ y $\mathbf{w}$ tales que la primera está fuertemente relacionada con la constante y la segunda y tercera están fuertemente relacionadas (linealmente) entre sí.
+
+```{r}
+set.seed(2024)
+obs = 50
+cte = rep(1, obs)
+z = rnorm(obs, 5, 0.1)
+v = rnorm(obs, -3, 4)
+w = v + rnorm(obs, 1, 0.5)
+```
+
+Calculando el RVIF para la matriz de diseño $\mathbf{X} = [ \mathbf{1}, \mathbf{z}, \mathbf{v}, \mathbf{w} ]$, se observa un alto valor del RVIF para las cuatro variables:
+
+```{r warning=FALSE, message=FALSE}
+library(rvif)
+X = data.frame(cte, z, v, w)
+RVIF(X, l_u=T, graf=F)
+```
+
+Excluyendo al término constante del cálculo, se observa que el valor del RVIF asociado a la segunda variable disminuye considerablemente, lo cual indica (como sabemos) que su valor alto inicial se debe a su relación con el término independiente. Por otro lado, los valores de las dos restantes variables siguen siendo muy similares a los iniciales, lo cual pone de manifiesto la relación lineal existente entre ambas.
+
+```{r}
+RVIF(X[,-1], l_u=T, intercept=F, graf=F)
+```
+
+Destacar que además del [artículo original](https://doi.org/10.1007/s10614-024-10575-8), existe una versión inicial en arXiv: [Overcoming the inconsistences of the variance inflation factor: a redefined VIF and a test to detect statistical troubling multicollinearity](https://arxiv.org/abs/2005.02245).
+
+Finalmente, indicar que este trabajo ha sido apoyado por el proyecto PP2019-EI-02 de la Universidad de Granada y por el proyecto A-SEJ-496-UGR20 de la Consejería de Transformación Económica, Información, Industria, Conocimiento y Universidades de la Junta de Andalucía.

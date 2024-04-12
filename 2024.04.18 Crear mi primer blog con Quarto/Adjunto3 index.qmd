@@ -1,0 +1,15 @@
+---
+title: "DIM3AP"
+description: 
+  Desarrollo e implementación de metodologías para mitigar multicolinealidad aproximada preocupante 
+listing:
+  contents: posts
+  sort: "date desc"
+  type: grid # para cambiar el formato en el que aparecen los post
+  grid-columns: 3
+  categories: true
+  sort-ui: false
+  filter-ui: false
+page-layout: full
+title-block-banner: true
+---
